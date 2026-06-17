@@ -1,0 +1,18 @@
+import { body } from 'express-validator';
+
+export const registerValidation = [
+  body('name').trim().notEmpty().withMessage('Name is required').isLength({ min: 2, max: 100 }),
+  body('email').trim().isEmail().withMessage('Valid email is required').normalizeEmail(),
+  body('password').isLength({ min: 6 }).withMessage('Password must be at least 6 characters'),
+];
+
+export const loginValidation = [
+  body('email').trim().isEmail().withMessage('Valid email is required').normalizeEmail(),
+  body('password').notEmpty().withMessage('Password is required'),
+];
+
+export const adminLoginValidation = [
+  body('email').trim().isEmail().withMessage('Valid email is required').normalizeEmail(),
+  body('password').notEmpty().withMessage('Password is required'),
+  body('secretCode').notEmpty().withMessage('Admin secret code is required'),
+];
