@@ -1,60 +1,125 @@
 # Exam Proctoring Dashboard
 
-A full-stack AI-powered exam proctoring system with real-time face detection, head pose tracking, and suspicious activity monitoring.
+Exam Proctoring Dashboard is a full-stack web application built using the MERN stack. It helps conduct online examinations while monitoring students through AI-based proctoring features such as face detection, multiple-face detection, head pose tracking, fullscreen monitoring, and suspicious activity logging.
 
-## Project Structure
+## Features
 
-
-Exam_Proctoring_Dashboard/
-├── frontend/          # React + Vite + Tailwind CSS
-├── backend/           # Express + Mongoose + Socket.IO
-├── .gitignore
-└── README.md
-
-
-## Prerequisites
-
-- **Node.js** >= 18
-- **MongoDB** >= 6.0 (running locally or a remote URI)
-- **npm** >= 9
-
-## Environment Variables
-
-Copy `backend/.env` and configure:
-
-| Variable | Description | Default |
-|---|---|---|
-| `NODE_ENV` | Environment mode | `development` |
-| `PORT` | Backend server port | `5000` |
-| `MONGO_URI` | MongoDB connection string | `mongodb://localhost:27017/exam_proctoring` |
-| `JWT_SECRET` | JWT signing secret | `your_jwt_secret_change_in_production` |
-| `JWT_EXPIRES_IN` | JWT token expiry | `7d` |
-| `ADMIN_SECRET_CODE` | Admin registration secret | `admin_secret_123` |
-
-## Installation & Running
-
-```bash
-# Frontend
-cd frontend && npm install && npm run dev
-
-# Backend (separate terminal)
-cd backend && npm install && npm run dev
-```
-
-- **Frontend**: http://localhost:5173
-- **Backend**: http://localhost:5000
-
-### Production build
-
-```bash
-cd frontend && npm run build
-cd backend && npm start
-```
+* Secure student and admin authentication
+* Create and manage exams
+* Question management system
+* Real-time exam monitoring
+* Face detection using face-api.js
+* Multiple face and no-face detection
+* Head pose tracking
+* Tab switch and fullscreen monitoring
+* Suspicious activity logging
+* Student result management
+* Admin analytics dashboard
+* Real-time communication using Socket.IO
 
 ## Tech Stack
 
-**Frontend**: React 18, Vite, Tailwind CSS, Zustand, React Router, Axios, Recharts, Socket.IO Client, face-api.js
+Frontend:
 
-**Backend**: Express, Mongoose, JWT, bcryptjs, Socket.IO, express-validator, express-rate-limit
+* React
+* Vite
+* Tailwind CSS
+* Zustand
+* Axios
+* Socket.IO Client
+* face-api.js
 
-**AI/Proctoring**: face-api.js (TensorFlow.js), WebRTC, Head Pose Estimation via facial landmarks
+Backend:
+
+* Node.js
+* Express.js
+* MongoDB
+* Mongoose
+* JWT Authentication
+* bcryptjs
+* Socket.IO
+
+## Project Structure
+
+```text
+Exam_Proctoring_Dashboard
+├── frontend
+├── backend
+├── .gitignore
+└── README.md
+```
+
+## Installation
+
+Clone the repository and install dependencies:
+
+```bash
+# Frontend
+cd frontend
+npm install
+
+# Backend
+cd backend
+npm install
+```
+
+## Environment Variables
+
+Create a `.env` file inside the backend folder and add:
+
+```env
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
+JWT_EXPIRES_IN=7d
+ADMIN_SECRET_CODE=your_admin_code
+```
+
+## Running the Project
+
+Start the backend:
+
+```bash
+cd backend
+npm run dev
+```
+
+Start the frontend:
+
+```bash
+cd frontend
+npm run dev
+```
+
+Frontend runs on:
+
+```text
+http://localhost:5173
+```
+
+Backend runs on:
+
+```text
+http://localhost:5000
+```
+
+## Main Modules
+
+* Authentication Module
+* Exam Management Module
+* Question Management Module
+* Result Management Module
+* AI Proctoring Module
+* Analytics Dashboard
+
+## Future Enhancements
+
+* Eye gaze tracking
+* Voice activity detection
+* Browser extension monitoring
+* Advanced AI-based cheating detection
+* Cloud deployment and scaling
+
+## Author
+
+Developed as an individual MERN Stack project for online examination monitoring and management.
