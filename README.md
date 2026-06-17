@@ -69,9 +69,7 @@ Create a `.env` file inside the backend folder and add:
 
 ```env
 PORT=5000
-MONGO_URI=**********
-JWT_SECRET=**************
-ADMIN_SECRET_CODE=******
+MONGO_URI=mongodb://localhost:27017/exam_proctoring
 ```
 
 ## Running the Project
