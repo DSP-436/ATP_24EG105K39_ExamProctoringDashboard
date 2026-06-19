@@ -8,6 +8,7 @@ const env = {
   jwtExpiresIn: process.env.JWT_EXPIRES_IN || '7d',
   adminSecretCode: process.env.ADMIN_SECRET_CODE,
   nodeEnv: process.env.NODE_ENV || 'development',
+  clientUrl: process.env.CLIENT_URL,
 };
 
 export default env;

@@ -17,16 +17,18 @@ import adminRoutes from './routes/adminRoutes.js';
 
 const app = express();
 const httpServer = createServer(app);
+
+const corsOrigins = env.clientUrl
+  ? env.clientUrl.split(',').map((s) => s.trim())
+  : ['http://localhost:5173', 'http://localhost:3000'];
+
 const io = new Server(httpServer, {
-  cors: {
-    origin: ['http://localhost:5173', 'http://localhost:3000'],
-    credentials: true,
-  },
+  cors: { origin: corsOrigins, credentials: true },
 });
 
 app.set('io', io);
 
-app.use(cors());
+app.use(cors({ origin: corsOrigins, credentials: true }));
 app.use(express.json({ limit: '10mb' }));
 
 const limiter = rateLimit({

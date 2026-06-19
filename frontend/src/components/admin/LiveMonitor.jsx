@@ -16,7 +16,8 @@ export default function LiveMonitor() {
   useEffect(() => {
     getExamLogs(examId).then((res) => setLogs(res.data.logs)).catch(() => {}).finally(() => setLoading(false));
 
-    socketRef.current = io({ transports: ['websocket'] });
+    const socketUrl = import.meta.env.VITE_SOCKET_URL || undefined;
+    socketRef.current = io(socketUrl, { transports: ['websocket'] });
     socketRef.current.emit('join:exam', examId);
 
     socketRef.current.on('proctor:alert', (data) => {
