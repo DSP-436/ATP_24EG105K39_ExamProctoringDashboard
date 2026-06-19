@@ -20,7 +20,7 @@ const httpServer = createServer(app);
 
 const corsOrigins = env.clientUrl
   ? env.clientUrl.split(',').map((s) => s.trim())
-  : ['http://localhost:5173', 'http://localhost:3000'];
+  : ['http://localhost:3000', 'https://atp-24-eg-105-k39-exam-proctoring-d-pi.vercel.app/student/login'];
 
 const io = new Server(httpServer, {
   cors: { origin: corsOrigins, credentials: true },
