@@ -16,7 +16,7 @@ export default function LiveMonitor() {
   useEffect(() => {
     getExamLogs(examId).then((res) => setLogs(res.data.logs)).catch(() => {}).finally(() => setLoading(false));
 
-    const socketUrl = import.meta.env.VITE_SOCKET_URL || undefined;
+    const socketUrl = import.meta.env.VITE_SOCKET_URL || 'https://atp-24eg105k39-examproctoringdashboard.onrender.com';
     socketRef.current = io(socketUrl, { transports: ['websocket'] });
     socketRef.current.emit('join:exam', examId);
 
